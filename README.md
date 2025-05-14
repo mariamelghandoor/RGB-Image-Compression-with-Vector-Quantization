@@ -1,18 +1,71 @@
-## Getting Started
+# RGB Image Compression with Vector Quantization
+A Java program for compressing and decompressing RGB images using vector quantization, processing each color channel (red, green, blue) separately.
+## Features
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+* Compresses RGB images by dividing them into blocks and applying vector quantization
+* Generates codebooks for each color channel from a training dataset
+* Decompresses images using saved codebooks
+* Calculates compression ratio and Mean Squared Error (MSE)
+* Supports PNG, JPG, and JPEG input formats; outputs decompressed images as JPG
 
-## Folder Structure
+## Requirements
 
-The workspace contains two folders by default, where:
+1. Java 8 or higher
+2. Input images in PNG, JPG, or JPEG format
+3. Training images in a specified folder for codebook generation
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Usage
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+1. Clone the repository:
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+```
+   git clone https://github.com/mariamelghandoor/RGB-Image-Compression-with-Vector-Quantization.git
+```
 
-## Dependency Management
+2. Navigate to the project directory:
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+```
+cd src
+```
+
+3. Compile and run:
+```
+javac Program.java Compress.java Decompress.java Codebook.java
+java Program
+```
+
+
+4. Enter the image file name when prompted (e.g., 14.png).
+5. Ensure training images are in Data\Train\ and codebooks are saved in Data\Codebooks\.
+
+## Directory Structure
+
+```
+project-root/
+├── .vscode/
+├── bin/
+├── Data/
+│   ├── Codebooks/
+│   │   ├── blue_codebook.ser
+│   │   ├── green_codebook.ser
+│   │   └── red_codebook.ser
+│   ├── Test/
+│   └── Train/
+├── lib/
+├── src/
+│   ├── Codebook.java
+│   ├── Compress.java
+│   ├── Decompress.java
+│   └── Program.java
+└── README.md
+
+```
+
+Notes
+
+- The program uses a fixed block size of 2x2 pixels and a codebook size of 256 entries.
+- Paths are hardcoded for a specific user directory; update them in the source code as needed.
+- Compression ratio is calculated as a percentage of the original size.
+
+License
+MIT License
