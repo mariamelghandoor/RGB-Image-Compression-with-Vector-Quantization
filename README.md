@@ -61,11 +61,11 @@ project-root/
 
 ```
 
-Notes
+## Notes
 
 - The program uses a fixed block size of 2x2 pixels and a codebook size of 256 entries.
 - Paths are hardcoded for a specific user directory; update them in the source code as needed.
 - Compression ratio is calculated as a percentage of the original size.
 
-License
+## License
 MIT License
